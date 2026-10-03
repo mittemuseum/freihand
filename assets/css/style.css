@@ -1,0 +1,363 @@
+/* ============================================================
+   FREIHAND – Hörstation
+   Farben aus der Ausstellungsgrafik. Alle Farben stehen unten
+   in :root und nur dort.
+   ============================================================ */
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("../fonts/fraunces-latin-400-normal.woff2") format("woff2");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Hanken Grotesk";
+  src: url("../fonts/hanken-grotesk-latin-400-normal.woff2") format("woff2");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Hanken Grotesk";
+  src: url("../fonts/hanken-grotesk-latin-400-italic.woff2") format("woff2");
+  font-weight: 400; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: "Hanken Grotesk";
+  src: url("../fonts/hanken-grotesk-latin-600-normal.woff2") format("woff2");
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+
+:root {
+  /* Vorgaben aus der Grafik */
+  --schrift:  #817a4a;   /* große Schrift, Linien, Rahmen, Symbole */
+  --flaeche:  #ddd9cc;   /* Kacheln, Bildflächen */
+
+  /* Abgeleitet */
+  --text:     #5f5a33;   /* Fließtext und kleine Schrift (Kontrast 5:1 auf Fläche).
+                            Wer möchte, setzt hier #817a4a ein – Kontrast dann nur 3:1. */
+  --grund:    #fde7e2;   /* Seitenhintergrund, das Rosa der Grafik */
+  --koralle:  #fa5f50;   /* Kalligrafie-Rot: nur große, dekorative Elemente */
+  --koralle-text: #c23b2b; /* Koralle dunkler, wenn es als Schrift gelesen werden muss */
+
+  /* Schrift */
+  --titel-schrift:  "Fraunces", Georgia, "Times New Roman", serif;
+  --grotesk:  "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Titelschrift: Fraunces (Serife). Zeilenhöhe bewusst eng. */
+  --titel-groesse: 2rem;
+  --titel-zeilen:  1.2;
+
+  --rand: clamp(1rem, 4vw, 3rem);
+  --radius: 0.35rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { font-size: 112.5%; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--grund);
+  color: var(--text);
+  font: 400 1rem/1.6 var(--grotesk);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, p, figure, ul, ol { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+img { display: block; max-width: 100%; }
+button { font: inherit; color: inherit; cursor: pointer; }
+a { color: var(--text); }
+
+:focus-visible {
+  outline: 4px solid var(--text);
+  outline-offset: 3px;
+}
+main:focus { outline: none; }
+
+.nur-lesen {
+  position: absolute !important;
+  width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+.sprunglink {
+  position: absolute; left: 1rem; top: -4rem;
+  background: var(--text); color: var(--grund);
+  padding: 0.6rem 1rem; z-index: 20;
+}
+.sprunglink:focus { top: 1rem; }
+
+.ohne-js { padding: 2rem var(--rand); }
+
+
+/* ---------- Kopf ---------- */
+
+.kopf {
+  display: flex; flex-wrap: wrap; align-items: baseline;
+  justify-content: space-between; gap: 0.25rem 1.5rem;
+  padding: 1.1rem var(--rand) 0.9rem;
+  border-bottom: 2px solid var(--schrift);
+}
+.kopf-marke { text-decoration: none; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 0.9rem; }
+.kopf-titel {
+  font-family: var(--titel-schrift);
+  text-transform: lowercase;   /* wie in der Grafik: „freihand“ */
+  font-size: var(--titel-groesse);
+  line-height: var(--titel-zeilen);
+  color: var(--schrift);
+}
+.kopf-unter { font-weight: 600; }
+.kopf-ort   { font-size: 0.9rem; }
+
+
+/* ---------- Hauptbereich ---------- */
+
+main { flex: 1; padding: 1.75rem var(--rand) 3rem; width: 100%; max-width: 78rem; margin: 0 auto; }
+
+.seitentitel {
+  font-family: var(--titel-schrift);
+  font-weight: 400;
+  font-size: clamp(2rem, 7vw, 2.7rem);
+  line-height: var(--titel-zeilen);
+  color: var(--schrift);
+}
+.anleitung { max-width: 40rem; margin-top: 0.5rem; font-size: 1.1rem; }
+.quellen { margin-top: 2rem; font-size: 0.9rem; font-style: italic; max-width: 40rem; }
+
+
+/* ---------- Übersicht: Kacheln ---------- */
+
+.kacheln {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+.kachel {
+  display: flex; flex-direction: column; height: 100%;
+  background: var(--flaeche);
+  border-radius: var(--radius);
+  border: 2px solid transparent;
+  text-decoration: none; overflow: hidden;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.kachel:hover { border-color: var(--schrift); transform: translateY(-2px); }
+.kachel-bild { display: block; overflow: hidden; aspect-ratio: 4 / 3; background: rgba(129, 122, 74, 0.12); }
+.kachel-bild img { width: 100%; height: 100%; object-fit: cover; }
+.kachel-koerper { display: flex; flex-direction: column; gap: 0.35rem; padding: 0.9rem 1.1rem 1.1rem; flex: 1; }
+.kachel-nr {
+  font-family: var(--titel-schrift);
+  font-size: 2.8rem; line-height: 1.15;
+  color: var(--koralle);
+}
+.kachel-titel {
+  font-family: var(--titel-schrift);
+  font-size: 1.6rem; line-height: var(--titel-zeilen);
+  color: var(--text);
+}
+.kachel-fuss { margin-top: auto; padding-top: 0.6rem; font-size: 0.95rem; font-weight: 600; }
+
+@media (prefers-reduced-motion: reduce) {
+  .kachel { transition: none; }
+  .kachel:hover { transform: none; }
+}
+
+
+/* ---------- Kapitelseite ---------- */
+
+.zurueck {
+  display: inline-flex; align-items: center; min-height: 3rem;
+  font-weight: 600; text-decoration: none;
+}
+.zurueck:hover { text-decoration: underline; }
+
+.kapitel-kopf { margin: 0.25rem 0 1.5rem; }
+.kapitel-nr {
+  font-family: var(--titel-schrift);
+  font-size: 1.5rem; line-height: var(--titel-zeilen);
+  color: var(--koralle-text);
+}
+.kapitel-titel {
+  font-family: var(--titel-schrift);
+  font-weight: 400;
+  font-size: clamp(1.9rem, 6.5vw, 2.6rem);
+  line-height: var(--titel-zeilen);
+  color: var(--schrift);
+}
+
+/* Schmal: Kopf, Player, Galerie, Text untereinander.
+   Breit: Galerie links, Player und Text rechts. */
+.kapitel-gitter {
+  display: grid; gap: 1.75rem;
+  grid-template-areas: "player" "galerie" "text";
+}
+.g-player  { grid-area: player; }
+.g-galerie { grid-area: galerie; min-width: 0; }
+.g-text    { grid-area: text; }
+
+@media (min-width: 62rem) {
+  .kapitel-gitter {
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    grid-template-areas: "galerie player" "galerie text";
+    grid-template-rows: auto 1fr;
+    column-gap: 2.5rem;
+  }
+  .ohne-bild .kapitel-gitter {
+    grid-template-columns: minmax(0, 44rem);
+    grid-template-areas: "player" "text";
+  }
+}
+
+.zusammenfassung { max-width: 40rem; font-size: 1.1rem; }
+
+
+/* ---------- Player ---------- */
+
+.spieler {
+  display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+}
+.spieler .play {
+  flex: none; width: 4.5rem; height: 4.5rem; border-radius: 50%;
+  border: 0; background: var(--schrift); color: #fff;
+  display: grid; place-items: center;
+}
+.spieler .play:hover { background: var(--text); }
+.spieler .play svg { width: 1.9rem; height: 1.9rem; fill: currentColor; }
+.spieler .ic-pause { display: none; }
+.spieler.laeuft .ic-play  { display: none; }
+.spieler.laeuft .ic-pause { display: block; }
+
+.spur { flex: 1 1 14rem; min-width: 0; }
+
+/* Zeitleiste: einfache Spur, Fortschritt in Schriftfarbe, runder Griff */
+.linie {
+  position: relative;
+  height: 2.75rem;                       /* große Treff-Fläche, Spur selbst ist dünn */
+  margin: 0 0.75rem;
+  cursor: pointer;
+  touch-action: none;
+}
+.linie::before {                          /* Spur */
+  content: ""; position: absolute; left: 0; right: 0; top: 50%;
+  height: 0.5rem; margin-top: -0.25rem; border-radius: 0.25rem;
+  background: var(--flaeche);
+  box-shadow: inset 0 0 0 1px rgba(129, 122, 74, 0.35);
+}
+.tinte {                                  /* Fortschritt */
+  position: absolute; left: 0; top: 50%;
+  height: 0.5rem; margin-top: -0.25rem; width: 0; border-radius: 0.25rem;
+  background: var(--schrift);
+}
+.griff {
+  position: absolute; left: 0; top: 50%;
+  width: 1.4rem; height: 1.4rem; margin: -0.7rem 0 0 -0.7rem;
+  border-radius: 50%; background: var(--schrift);
+  border: 3px solid var(--grund);
+  pointer-events: none;
+}
+.zeiten { display: flex; justify-content: space-between; margin: 0 0.75rem; font-size: 0.95rem; font-variant-numeric: tabular-nums; }
+
+.sprungtasten { display: flex; gap: 0.6rem; flex-basis: 100%; }
+.sprungtasten button, .rund {
+  min-height: 3rem; min-width: 3rem; padding: 0 1rem;
+  background: transparent; border: 2px solid var(--schrift); border-radius: var(--radius);
+  font-weight: 600;
+}
+.sprungtasten button:hover, .rund:hover:not(:disabled) { background: var(--flaeche); }
+.rund { border-radius: 50%; padding: 0; font-size: 1.7rem; line-height: 1; display: grid; place-items: center; }
+.rund:disabled { opacity: 0.35; cursor: default; }
+
+.spieler-hinweis { flex-basis: 100%; font-style: italic; }
+
+
+/* ---------- Mitlesen ---------- */
+
+.mitlesen { margin-top: 1.5rem; }
+.mitlesen summary {
+  list-style: none; display: inline-flex; align-items: center; gap: 0.6rem;
+  min-height: 3rem; padding: 0 1.1rem; cursor: pointer;
+  border: 2px solid var(--schrift); border-radius: var(--radius); font-weight: 600;
+}
+.mitlesen summary::-webkit-details-marker { display: none; }
+.mitlesen summary::before { content: "+"; font-size: 1.4rem; line-height: 1; }
+.mitlesen[open] summary::before { content: "–"; }
+.mitlesen summary:hover { background: var(--flaeche); }
+.transkript { max-width: 38rem; margin-top: 1rem; line-height: 1.75; }
+.transkript p + p { margin-top: 1em; }
+
+
+/* ---------- Galerie ---------- */
+
+.galerie-bild { background: var(--flaeche); border-radius: var(--radius); overflow: hidden; }
+.bild-knopf {
+  display: block; width: 100%; padding: 0; border: 0; background: transparent;
+  cursor: zoom-in;
+}
+.hauptbild { width: 100%; height: auto; max-height: 64vh; object-fit: contain; margin: 0 auto; }
+.galerie-bild figcaption {
+  padding: 0.8rem 1.1rem 1rem;
+  font-size: 0.95rem; line-height: 1.5;
+  border-top: 3px solid var(--koralle);
+}
+.galerie-steuerung { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 0.8rem; }
+.zaehler { font-weight: 600; font-variant-numeric: tabular-nums; }
+
+.miniaturen { display: flex; gap: 0.5rem; margin-top: 0.8rem; overflow-x: auto; padding: 4px 4px 8px; }
+.miniaturen button {
+  flex: none; width: 5rem; height: 3.8rem; padding: 0;
+  border: 0; border-radius: 0.2rem; overflow: hidden; background: var(--flaeche);
+  opacity: 0.7;
+}
+.miniaturen button[aria-current="true"] { opacity: 1; outline: 3px solid var(--text); outline-offset: 2px; }
+.miniaturen img { width: 100%; height: 100%; object-fit: cover; }
+
+
+/* ---------- Weiter / zurück zwischen Kapiteln ---------- */
+
+.weiter {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem;
+  margin-top: 2.5rem; padding-top: 1.25rem; border-top: 2px solid var(--schrift);
+}
+.weiter a { display: inline-flex; flex-direction: column; text-decoration: none; max-width: 22rem; }
+.weiter a:hover .weiter-titel { text-decoration: underline; }
+.weiter .zu { font-size: 0.9rem; font-weight: 600; }
+.weiter-titel { font-family: var(--titel-schrift); font-size: 1.4rem; line-height: var(--titel-zeilen); }
+.weiter .vor { margin-left: auto; text-align: right; }
+
+
+/* ---------- Fußzeile ---------- */
+
+.fuss { padding: 1rem var(--rand) 1.5rem; border-top: 2px solid var(--schrift); font-size: 0.9rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 1.5rem; }
+.fuss-links { display: flex; gap: 1.5rem; }
+.fuss a { display: inline-flex; align-items: center; min-height: 2.75rem; }
+
+/* Impressum / Datenschutz */
+.textseite { max-width: 40rem; }
+.textseite p { margin-top: 0.4rem; }
+.textseite a { text-underline-offset: 0.15em; }
+.textseite ul { margin-top: 0.4rem; padding-left: 1.25rem; list-style: disc; }
+.textseite li { margin-top: 0.4rem; }
+.text-zwischen2 { font-size: 1.05rem; font-weight: 600; margin-top: 1.3rem; }
+.text-zwischen { font-family: var(--titel-schrift); font-weight: 400; font-size: 1.3rem; line-height: 1.25; color: var(--schrift); margin-top: 1.6rem; }
+
+
+/* ---------- Großansicht ---------- */
+
+.lightbox {
+  border: 0; padding: 0; background: transparent; color: #fff;
+  width: 100%; max-width: 100vw; height: 100%; max-height: 100vh;
+}
+.lightbox[open] { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.9rem; }
+.lightbox::backdrop { background: rgba(60, 56, 30, 0.93); }
+.lb-figur { display: flex; flex-direction: column; align-items: center; gap: 0.8rem; max-width: 94vw; }
+.lb-figur img { max-width: 94vw; max-height: 72vh; width: auto; height: auto; object-fit: contain; background: var(--flaeche); }
+.lb-figur figcaption { max-width: 46rem; font-size: 0.98rem; text-align: center; }
+.lb-steuerung { display: flex; align-items: center; gap: 1.2rem; }
+.lightbox .rund, .lb-zu { color: #fff; border-color: #fff; }
+.lightbox .rund:hover:not(:disabled), .lb-zu:hover { background: rgba(255, 255, 255, 0.15); }
+.lightbox :focus-visible { outline-color: #fff; }
+.lb-zu {
+  position: absolute; top: 1rem; right: 1rem; width: 3.2rem; height: 3.2rem;
+  border: 2px solid #fff; border-radius: 50%; background: transparent; font-size: 2rem; line-height: 1;
+}
