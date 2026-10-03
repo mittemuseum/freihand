@@ -165,15 +165,11 @@ Keine Schule, in der Wissen von oben nach unten gereicht wird. Kein Ort, der das
 
 Die 308. lebt das pädagogische Programm von Anfang an – offiziell anerkannt als Lebensgemeinschaftsschule wird sie allerdings erst 1930, als die Zahl solcher Versuchsschulen in Berlin auf elf steigt.
 
-Die 308. ist außerdem eine weltliche Schule – keine konfessionelle, keine evangelische, keine katholische. Weltlich heißt: ohne Religionsunterricht. Das ist eine politische Entscheidung, und die evangelische Kirche kämpft gegen solche Schulen.
+Die 308. ist außerdem eine weltliche Schule – keine konfessionelle. Weltlich heißt: ohne Religionsunterricht. Das ist eine politische Entscheidung, und die evangelische Kirche kämpft gegen solche Schulen.
 
 Kreuziger hatte die Hamburger Reformschulen studiert, wo Lehrer wie Wilhelm Paulsen darauf bestanden: Kinder sind keine leeren Behälter, sondern bringen Erfahrungen, Bilder, Sprache, Gefühle mit. Und genau das sollte Eingang in die Schule finden.
 
-Paulsen ist dabei mehr als ein Name aus Hamburg. Von 1921 bis 1924 ist er Oberstadtschulrat, in leitender Position der Berliner Schulverwaltung. Er kämpft gegen bürokratische Hürden und öffnet den Weg für die ersten Versuchsschulen.
-
-Im Wedding des Jahres 1923 bedeutet das: Diese Kinder bringen den Leopoldplatz mit. Die Enge der Mietskasernen. Die Gerüche der Hinterhöfe. Die Stimmen der Mütter, die abends rechnen, ob das Geld reicht. Den Lärm der Straße. Die Freiheit der wenigen Freiflächen.
-
-All das soll nicht draußen bleiben. All das soll hinein.`
+Paulsen ist dabei mehr als ein Name aus Hamburg. Von 1921 bis 1924 ist er Oberstadtschulrat, in leitender Position der Berliner Schulverwaltung. Er kämpft gegen bürokratische Hürden und öffnet den Weg für die ersten Versuchsschulen.`
 },
 
 {
