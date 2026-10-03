@@ -12,14 +12,13 @@
 /* ---------- Einstellungen ---------- */
 
 const EINSTELLUNGEN = {
-  ausstellung:  "FREIHAND",
+  ausstellung:  "freihand",
   untertitel:   "Schrift, Schule, Gemeinschaft",
   ort:          "Mitte Museum",
 
   // Überschrift und Anleitung auf der Startseite
   stationstitel: "Zum Hören",
   anleitung:     "Elf Kapitel zur Geschichte der 308. Gemeindeschule am Leopoldplatz. Tippen Sie auf ein Kapitel, um es zu hören.",
-  quellen:       "Nach Roik-Bogner, Radde 1973/1992, dem Typoskript von Bruno Stephan und der Gemeinschaftszeitung der Klasse (HMW AB 885).",
 
   // Springt nach dieser Zeit ohne Berührung zurück zur Übersicht.
   // 0 = ausgeschaltet. Läuft nie, solange Audio abgespielt wird.
@@ -43,11 +42,6 @@ info@mittemuseum.de · www.mittemuseum.de
 
 # Text und Umsetzung
 Luise Haubenreiser
-
-# Inhaltlich verantwortlich
-Nathan Friedenberg, Leiter Mitte Museum
-Tel. (030) 460 60 19 16
-E-Mail: friedenberg@mittemuseum.de
 
 # Weitere Pflichtangaben
 Vertretungsberechtigung und weitere Angaben: siehe Impressum auf www.mittemuseum.de.
@@ -137,7 +131,7 @@ const KAPITEL = [
   titel: "Zehn Baracken aus Holz",
   bilder: [
     { datei: "bilder/001-luftbild.jpg",
-      unterschrift: "Hinter dem Bretterzaun liegt die Schule: Blick von oben auf die Baracken der 308. Gemeindeschule am Leopoldplatz. Mitte Museum, HMW BS 00001",
+      unterschrift: "Hinter dem Bretterzaun liegt die Schule: Blick von oben auf die Baracken der 308. Gemeindeschule am Leopoldplatz.",
       alt: "Altes Schwarzweißfoto von oben: Ein Weg führt zwischen Bäumen hinab, dahinter niedrige Holzbaracken, davor ein Bretterzaun mit Tor, im Hintergrund Mietshäuser." }
   ],
   text: "1904 plant die Stadtbauinspektion zehn transportable Schulpavillons aus Holz, dazu eine Turnhalle, umgeben von einem zweieinhalb Meter hohen Bretterzaun. Im Januar 1905 ziehen die ersten Kinder ein. Die Schule, die später als 308. bekannt wird, kommt erst 1913 dazu: zwölf Mädchen- und zwei Knabenklassen, Arbeiterkinder aus den Hinterhöfen ringsum.",
@@ -157,7 +151,7 @@ Aber das wird sich ändern.`
   titel: "Eine Schule als Lebensgemeinschaft",
   bilder: [
     { datei: "bilder/002-sommerfest.jpg",
-      unterschrift: "Sommerfest an der 308. Gemeindeschule: Zwischen den Baracken spannt sich ein bemaltes Tuch mit den Worten „Es war einmal“. Darunter drängen sich die Gäste. Mitte Museum, HMW BS 00005",
+      unterschrift: "Sommerfest an der 308. Gemeindeschule: Zwischen den Baracken spannt sich ein bemaltes Tuch mit den Worten „Es war einmal“. Darunter drängen sich die Gäste.",
       alt: "Altes Foto: Über einem Weg zwischen Holzbaracken hängt ein großes bemaltes Tuch mit gemalten Figuren und der Aufschrift „Es war einmal“. Darunter steht eine Menschenmenge." }
   ],
   text: "1923 übernimmt Max Kreuziger das Rektorat. Er kennt die Hamburger Reformschulen und den Begriff, den Wilhelm Paulsen für sie geprägt hat: Lebensgemeinschaft. Kinder, Lehrkräfte und Eltern sollen die Schule gemeinsam tragen, und was die Kinder von draußen mitbringen, soll nicht vor der Tür bleiben. Die 308. arbeitet von 1923 an so — offiziell anerkannt wird sie erst sieben Jahre später.",
@@ -187,7 +181,7 @@ All das soll nicht draußen bleiben. All das soll hinein.`
   titel: "Freier Ausdruck",
   bilder: [
     { datei: "bilder/003-andenken.jpg",
-      unterschrift: "„Andenken“ nennt ein Kind diesen Aufsatz: Bei jedem Sommerfest fotografiert Lehrer Bruno Stephan, ein paar Tage später können die Kinder die Bilder bei ihm kaufen. Mitte Museum, HMW AB Aufsätze 308 00024",
+      unterschrift: "„Andenken“ nennt ein Kind diesen Aufsatz: Bei jedem Sommerfest fotografiert Lehrer Bruno Stephan, ein paar Tage später können die Kinder die Bilder bei ihm kaufen.",
       alt: "Linierte Heftseite in Schreibschrift mit der Überschrift „Andenken“. Ein Kind schreibt, dass es beim Sommerfest fotografiert wird und sich Bilder kaufen kann." }
   ],
   text: "Keine Diktate, keine Abschriften: Die Kinder schreiben eigene Beobachtungen und Geschichten auf. In Alfred Zettls Klassenzimmer bemalt ein ehemaliger Schüler die Wände mit historischen Szenen, und die Eltern sparen Stahlrohrstühle an, damit sich im Unterrichtsgespräch alle ansehen können. In jedem Klassenraum steht ein Aquarium. Ein Reporter der BZ am Mittag nennt die Schule im Mai 1931 das Reich der Kinderträume.",
@@ -219,7 +213,7 @@ Ein Reporter der BZ am Mittag schreibt im Mai 1931 begeistert: Die 308. sei „d
   titel: "Schreiben lernen",
   bilder: [
     { datei: "bilder/004-ringbahn.jpg",
-      unterschrift: "Die zweite Schrift, die die Kinder lernen: eine lateinische Schreibschrift, runder und der heutigen Handschrift näher. Zwischen vorgedruckten Hilfslinien erzählt Tankred von einer Fahrt mit der Ringbahn zum Tempelhofer Feld – und wie er Willi erklärt, was „die Dinger“ an der Strecke bedeuten. Mitte Museum, HMW AB Aufsätze 308 00022",
+      unterschrift: "Die zweite Schrift, die die Kinder lernen: eine lateinische Schreibschrift, runder und der heutigen Handschrift näher. Zwischen vorgedruckten Hilfslinien erzählt Tankred von einer Fahrt mit der Ringbahn zum Tempelhofer Feld – und wie er Willi erklärt, was „die Dinger“ an der Strecke bedeuten.",
       alt: "Aufgeschlagenes Heft, zwei Seiten in Schreibschrift mit buntem Rand, quer gedreht. Auf der Seite oben steht „Die Ringbahn“, unten eine kleine Zeichnung." }
   ],
   text: "Kinder in preußischen Schulen üben seit 1915 Sütterlin; bewertet wird die Abweichung von der Vorlage. An der 308. wird Schreiben zum Werkzeug: Der Lehrplan ordnet es Themenkreisen zu, vom Körper des Kindes bis zu „Unser Wedding“. Zeugnisse lehnt die Schule im Prinzip ab. Weil Lehrstellen und weiterführende Schulen sie verlangen, gibt es eine Zwischenregelung ohne Noten.",
@@ -241,7 +235,7 @@ Und zuletzt: unser Wedding.`
   titel: "Die Zeitung der Klasse",
   bilder: [
     { datei: "bilder/005-streik-der-steine.jpg",
-      unterschrift: "Steine auf Demonstration: Auf dem Titel vom 1. März 1927 ziehen sie mit Fahnen und Schildern durch die Straßen. Die Geschichte dazu erzählt vom Streik der Steine in Berlin-Mitte, angeführt vom Rüdersdorfer Kalkstein. Ihre Forderung: „Wir wollen nicht mehr getreten und so mißhandelt werden.“ Mitte Museum, HMW AB 885.9",
+      unterschrift: "Steine auf Demonstration: Auf dem Titel vom 1. März 1927 ziehen sie mit Fahnen und Schildern durch die Straßen. Die Geschichte dazu erzählt vom Streik der Steine in Berlin-Mitte, angeführt vom Rüdersdorfer Kalkstein. Ihre Forderung: „Wir wollen nicht mehr getreten und so mißhandelt werden.“",
       alt: "Aquarellierte Titelseite der Gemeinschaftszeitung vom 1. März 1927: Steinfiguren mit Fahnen und Schildern ziehen in einem Demonstrationszug. Darunter steht „Der Streik der Steine“." }
   ],
   text: "Am 1. Mai 1926 erscheint die erste Ausgabe der Gemeinschaftszeitung, geschrieben, gezeichnet und aquarelliert von Hand. Die Redaktion wechselt, pünktlich erscheint sie nicht immer, und Horst Fink schreibt, die Hälfte der Klasse habe noch keinen Aufsatz geliefert. Zwanzig Hefte sind erhalten. Korrekturen von Lehrerhand findet man darin nicht.",
@@ -267,13 +261,13 @@ Zwanzig Hefte sind übrig. Dass es sie noch gibt, verdankt sich einem Lehrer, de
   titel: "Der Garten und die Kakaoküche",
   bilder: [
     { datei: "bilder/006-schulgarten-postkarte.jpg",
-      unterschrift: "„308. Volksschule – Schulgarten“ steht über dem Tor. Auf Land der St.-Aloysius-Kirche, heute Teil des Schillerparks, bauen Familien Gemüse an. Die Ernte geht an die Schulküche. Die Postkarte vom August 1930 ist an Bruno Stephan adressiert, mit Dank für seine Hilfe. Mitte Museum, HMW PK 191",
+      unterschrift: "„308. Volksschule – Schulgarten“ steht über dem Tor. Auf Land der St.-Aloysius-Kirche, heute Teil des Schillerparks, bauen Familien Gemüse an. Die Ernte geht an die Schulküche. Die Postkarte vom August 1930 ist an Bruno Stephan adressiert, mit Dank für seine Hilfe.",
       alt: "Postkarte: Ein weißes Gartentor mit dem Schild „308 Volksschule Schulgarten“, dahinter Beete, Büsche und Bäume." },
     { datei: "bilder/006-gartenarbeit.jpg",
-      unterschrift: "Mit Spaten und Schaufel: Kinder und Erwachsene graben gemeinsam den Schulgarten der 308. Gemeindeschule um. Mitte Museum, HMW-FS AB 326",
+      unterschrift: "Mit Spaten und Schaufel: Kinder und Erwachsene graben gemeinsam den Schulgarten der 308. Gemeindeschule um.",
       alt: "Altes Foto: Kinder und Erwachsene graben mit Spaten und Schaufeln ein Stück Land um, im Hintergrund Bäume." },
     { datei: "bilder/006-aufruf.jpg",
-      unterschrift: "„Unser Schulgarten ruft.“ Mit diesem Aufruf suchen Elternausschuss und Lehrer*innen Unterstützung aus allen Familien – wer mitarbeitet, bekommt ein eigenes Stück Land. Mitte Museum, HMW AB 888/00011_1",
+      unterschrift: "„Unser Schulgarten ruft.“ Mit diesem Aufruf suchen Elternausschuss und Lehrer*innen Unterstützung aus allen Familien – wer mitarbeitet, bekommt ein eigenes Stück Land.",
       alt: "Maschinengeschriebener Aufruf mit einer gezeichneten Figur mit weit geöffnetem Mund, darin die Worte „Unser Schulgarten ruft“. Unten ein Abschnitt zum Ausfüllen." }
   ],
   text: "Die Schule hat einen Garten, und der Garten ist Unterricht: Im September 1925 schreiben die Schüler auf, wie sich das Land am besten für die Gemeinschaft nutzen ließe. In der Schulküche kochen Väter und Mütter für die bedürftigsten Kinder — einkaufen, Tisch decken, abwaschen und die Abrechnung führen die Kinder selbst. Jede Klasse hat außerdem ihre eigene Kakaoküche, betrieben von Müttern nach festem Plan.",
@@ -299,10 +293,10 @@ Schule ist kein Gegenraum zum Leben, sondern seine Fortsetzung. Ein Ort, den Elt
   titel: "Montagabend, achtzehn Uhr",
   bilder: [
     { datei: "bilder/007-einladung.jpg",
-      unterschrift: "„Niemand darf fehlen!“ Im November 1930 lädt die 308. zur großen Elternversammlung in die Turnhalle. Bruno Stephan spricht über den Wert der Mitarbeit der Eltern – eine Reformschule wie die 308. Gemeindeschule lebt davon, dass Eltern sie mittragen. Mitte Museum, HMW AB 888/00012_1",
+      unterschrift: "„Niemand darf fehlen!“ Im November 1930 lädt die 308. zur großen Elternversammlung in die Turnhalle. Bruno Stephan spricht über den Wert der Mitarbeit der Eltern – eine Reformschule wie die 308. Gemeindeschule lebt davon, dass Eltern sie mittragen.",
       alt: "Maschinengeschriebene Einladung: Achtung! Montag, 10. November 1930, abends 8 Uhr, Große Elternversammlung in der Turnhalle. Thema: Vom Wert der Mitarbeit der Eltern an der Schule. Niemand darf fehlen!" },
     { datei: "bilder/007-chor.jpg",
-      unterschrift: "Der gemischte Chor der 308. Gemeindeschule, 1927. Mit einem Kreuz markiert sind zwei Lehrer der Schule: Oskar Eckert (mittlere Reihe, mit Brille) und Hans Schneider (vorn). Mitte Museum, HMW-FS AB 327",
+      unterschrift: "Der gemischte Chor der 308. Gemeindeschule, 1927. Mit einem Kreuz markiert sind zwei Lehrer der Schule: Oskar Eckert (mittlere Reihe, mit Brille) und Hans Schneider (vorn).",
       alt: "Gruppenfoto des Chors in mehreren Reihen vor einer Holzbaracke. Zwei Personen sind mit einem Kreuz markiert." }
   ],
   text: "Jeden Montag von achtzehn bis zwanzig Uhr tagt der Elternausschuss: drei gewählte Vertreter aus jeder der fünfzehn Klassen, mit dem Kollegium zusammen rund sechzig Personen. Oskar Eckert baut neben dem Schülerchor auch einen Elternchor auf. Zum Sommerfest 1931 kommen einige tausend Menschen auf den Leopoldplatz, mit Fackelzug und Aufführungen der Kinder. Das Jahresmotto lautet: Es war einmal.",
@@ -325,7 +319,7 @@ Die Schule führt Theaterstücke auf. 1928 „Das Glückskind, oder der Teufel m
       unterschrift: "Postkarte „Berlin N., Wedding – Ecke Reinickendorfer Str.“. Mit Tinte hat jemand ein Fenster am rechten Haus markiert und eine Nachricht dazugeschrieben.",
       alt: "Alte Postkarte: Blick in eine Straße mit hohen Mietshäusern, Gaslaternen und Zigarrengeschäften an den Ecken. Handschrift in brauner Tinte steht im Himmel über der Straße." },
     { datei: "bilder/008-meine-strasse.jpg",
-      unterschrift: "„Es ist beinahe so, als wenn man lauter Gefängnisgebäude sieht.“ So beschreibt Herbert Seidel, Schüler der 308. Gemeindeschule, seine Bornemannstraße: eine kleine Querstraße, kahle Häuser, fast keine Balkone. Mitte Museum, HMW AB 888/00014_1",
+      unterschrift: "„Es ist beinahe so, als wenn man lauter Gefängnisgebäude sieht.“ So beschreibt Herbert Seidel, Schüler der 308. Gemeindeschule, seine Bornemannstraße: eine kleine Querstraße, kahle Häuser, fast keine Balkone.",
       alt: "Maschinengeschriebener Aufsatz von Herbert Seidel mit dem Titel „Das Gesicht meiner Straße“." }
   ],
   text: "Über 350.000 Menschen leben 1920 im Wedding, ringsum Mietskasernen und Fabriken; im Sommer 1926 sind rund 30.000 auf Unterstützung angewiesen. Das Viertel organisiert sich: Arbeiterwohlfahrt, Gewerkschaften, Sportvereine, der Rote Wedding. Auf dem Sportplatz an der Behmstraße schlägt der BFC Nordiska im Mai 1921 den BC Saxonia Erfurt mit 5:2. Am 1. Mai 1929 sterben beim „Blutmai“ mehr als dreißig Menschen.",
@@ -349,7 +343,7 @@ Das Viertel formt die Schule. Die Kinder, die an der 308. lernen, wachsen in ein
   titel: "Nach Paragraph 4",
   bilder: [
     { datei: "bilder/009-kollegium.jpg",
-      unterschrift: "Das Kollegium der 308. bei einer Sitzung. Zweiter von links: Max Kreuziger, daneben Heinrich Mäcke. In der Mitte schreibt Bruno Stephan, neben ihm Alfred Zettl. Rechts, lachend: Else Hiebsch. Mitte Museum, HMW-FS AB 328",
+      unterschrift: "Das Kollegium der 308. bei einer Sitzung. Zweiter von links: Max Kreuziger, daneben Heinrich Mäcke. In der Mitte schreibt Bruno Stephan, neben ihm Alfred Zettl. Rechts, lachend: Else Hiebsch.",
       alt: "Sepiafarbenes Foto: Frauen und Männer sitzen um einen Sitzungstisch unter einer hellen Lampe, einige schreiben." }
   ],
   text: "1933 leiten Heinrich Mäcke und Else Hiebsch die Schule. Beide werden noch im selben Jahr nach Paragraph 4 aus dem Dienst entfernt — jenem Gesetz, mit dem der nationalsozialistische Staat Beamte als politisch unzuverlässig entlassen kann. Max Kreuziger, inzwischen Schulrat, kommt in ein Konzentrationslager und schließt sich später der Widerstandsgruppe um Ernst von Harnack an. Bertha Schübel, Bruno Stephan und Alfred Zettl werden versetzt, Bücher aus der Schüler- und der Elternbücherei werden verbrannt. Im Schuljahr 1933/34 werden alle Berliner Lebensgemeinschaftsschulen aufgelöst.",
@@ -385,7 +379,7 @@ Am 26. Januar 1937 brennt die Turnhalle fast vollständig ab. Die verkohlten Üb
   titel: "Vierzig Jahre später",
   bilder: [
     { datei: "bilder/010-sommerfest-tanz.jpg",
-      unterschrift: "„Volkstänze und Wandertrachten“ lautet 1929 das Motto des Sommerfests. In bestickten Kleidern, mit Blumenkränzen und einem Zylinder tanzen Mädchen auf dem Rasen vor den Schulbaracken. Mitte Museum, HMW-FS AB 316",
+      unterschrift: "„Volkstänze und Wandertrachten“ lautet 1929 das Motto des Sommerfests. In bestickten Kleidern, mit Blumenkränzen und einem Zylinder tanzen Mädchen auf dem Rasen vor den Schulbaracken.",
       alt: "Altes Foto: Mädchen in Festkleidern und mit Blumenkränzen tanzen auf einer Wiese, im Hintergrund stehen Holzbaracken." }
   ],
   text: "Von der Schule geblieben sind Erinnerungen — an die Aquarien, an den Kakao, an Kreuziger, Zettl und Eckert. Bruno Stephan blickt vierzig Jahre später zurück und findet eine Sache besonders erstaunlich: dass sich Montag für Montag, über all die Jahre, immer wieder genug Eltern für die Ausschusssitzungen fanden.",
