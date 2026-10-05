@@ -4,7 +4,7 @@
    Sie enthält alles, was auf der Station zu sehen ist.
 
    Sprechtext: Feature "Die 308. Gemeindeschule am Leopoldplatz",
-   nach Roik-Bogner, Radde 1973/1992 und dem Typoskript
+   nach Roik-Bogner, Radde und dem Typoskript
    von Bruno Stephan.
    ============================================================ */
 
@@ -19,8 +19,7 @@ const EINSTELLUNGEN = {
   // Überschrift und Anleitung auf der Startseite
   stationstitel: "Zum Hören",
   anleitung:     "Elf Kapitel zur Geschichte der 308. Gemeindeschule am Leopoldplatz. Tippen Sie auf ein Kapitel, um es zu hören.",
-  quellen:       "Nach Roik-Bogner, Radde 1973/1992, dem Typoskript von Bruno Stephan und der Gemeinschaftszeitung der Klasse (HMW AB 885).",
-
+  
   // Springt nach dieser Zeit ohne Berührung zurück zur Übersicht.
   // 0 = ausgeschaltet. Läuft nie, solange Audio abgespielt wird.
   ruhezeitMinuten: 4,
@@ -39,7 +38,7 @@ const EINSTELLUNGEN = {
   // Absätze durch Leerzeile; eine Zeile mit „# “ am Anfang wird Zwischenüberschrift.
   // (Statt Text geht auch ein Link: impressum: "https://…")
   fusszeile:   "Mitte Museum · Bezirksamt Mitte von Berlin · Text und Umsetzung: Luise Haubenreiser · Sprecherin: Luisa Burmester",
-  impressum:   `Hörstation zur Ausstellung „FREIHAND. Schrift, Schule, Gemeinschaft“ im Mitte Museum (11. Oktober bis 11. November 2026)
+  impressum:   `Hörstation zur Ausstellung „freihand. Schrift, Schule, Gemeinschaft“ im Mitte Museum (11. Oktober bis 11. November 2026)
 
 # Herausgeber
 Mitte Museum
@@ -52,8 +51,8 @@ info@mittemuseum.de · www.mittemuseum.de
 Luise Haubenreiser
 Sprecherin: Luisa Burmester
 
-# Inhaltlich verantwortlich
-Nathan Friedenberg, Leiter Mitte Museum
+# Museumsleitung
+Nathan Friedenberg
 Tel. (030) 460 60 19 16
 E-Mail: friedenberg@mittemuseum.de
 
