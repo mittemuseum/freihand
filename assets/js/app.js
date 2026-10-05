@@ -750,8 +750,9 @@
 
   /* ---------- Kopf und Fuß aus den Einstellungen ---------- */
 
-  document.getElementById("kopf-titel").textContent = E.ausstellung;
-  document.getElementById("kopf-unter").textContent = E.untertitel;
+  /* Das Logo ersetzt Titel und Untertitel; Vorlesetext und Link-Name kommen aus den Einstellungen */
+  document.getElementById("kopf-logo").alt = E.ausstellung + ". " + E.untertitel;
+  document.getElementById("kopf-marke").setAttribute("aria-label", E.ausstellung + ". " + E.untertitel + " – zur Übersicht");
   document.getElementById("kopf-ort").textContent = E.ort;
 
   (function fussZeile() {
