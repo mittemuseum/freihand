@@ -20,7 +20,8 @@
     impressum: "",
     datenschutz: "",
     bildschirmAnlassen: true,
-    linksInTexten: false
+    linksInTexten: false,
+    startLautstaerke: 1
   }, typeof EINSTELLUNGEN !== "undefined" ? EINSTELLUNGEN : {});
 
   var LISTE = typeof KAPITEL !== "undefined" ? KAPITEL : [];
@@ -42,6 +43,43 @@
   var ersteAnzeige = true;
   var galerieAktiv = null; // { anzahl, pos, setze(i) }
   var STARTZEIT = Date.now();
+
+  /* ---------- Lautstärke ----------
+     Auf Android und iPad ignoriert der Browser die Lautstärke eines Audio-Elements.
+     Deshalb läuft der Ton über Web Audio (GainNode); wo das fehlt, gilt audio.volume.
+     Der Regler wirkt zusätzlich zur Tablet-Lautstärke und kann nur leiser machen. */
+  var START_LAUT = Math.max(0, Math.min(1, E.startLautstaerke != null ? +E.startLautstaerke : 1));
+  var laut = START_LAUT, tonCtx = null, tonGain = null, lautRegler = null;
+
+  function tonAufbauen() {
+    if (tonGain || !window.AudioContext && !window.webkitAudioContext) return;
+    try {
+      var AC = window.AudioContext || window.webkitAudioContext;
+      tonCtx = new AC();
+      var quelle = tonCtx.createMediaElementSource(audio);
+      tonGain = tonCtx.createGain();
+      quelle.connect(tonGain);
+      tonGain.connect(tonCtx.destination);
+      tonGain.gain.value = laut;
+    } catch (_) { tonCtx = tonGain = null; }
+  }
+  function tonWecken() {
+    tonAufbauen();
+    if (tonCtx && tonCtx.state === "suspended") tonCtx.resume().catch(function () {});
+  }
+  function lautSetzen(v) {
+    laut = Math.max(0, Math.min(1, v));
+    if (tonGain) tonGain.gain.value = laut; else audio.volume = laut;
+    if (lautRegler) {
+      var p = Math.round(laut * 100);
+      lautRegler.value = String(p);
+      lautRegler.style.setProperty("--fuell", p + "%");
+      lautRegler.setAttribute("aria-valuetext", p + " Prozent");
+    }
+  }
+  ["pointerdown", "keydown"].forEach(function (ev) {
+    document.addEventListener(ev, tonWecken, { passive: true });
+  });
 
 
   /* ---------- Werkzeuge ---------- */
@@ -92,6 +130,7 @@
       if (!audio.paused) { ruheNeuStarten(); return; }   // wer zuhört, wird nicht unterbrochen
       var lbOffen = document.getElementById("lightbox");
       if (lbOffen && lbOffen.open) lbOffen.close();
+      lautSetzen(START_LAUT);   // der nächste Besuch beginnt nicht stumm
       /* Läuft die Seite schon über eine Stunde, wird sie beim Zurückspringen frisch geladen:
          so kommen geänderte Texte und Bilder auf die Station, und ein Zoom ist weg. */
       if (Date.now() - STARTZEIT > 60 * 60 * 1000) {
@@ -343,6 +382,11 @@
       '<div class="sprungtasten">' +
         '<button type="button" class="zurueck15" aria-label="' + SPRUNG + ' Sekunden zurück">−' + SPRUNG + ' s</button>' +
         '<button type="button" class="vor15" aria-label="' + SPRUNG + ' Sekunden vor">+' + SPRUNG + ' s</button>' +
+      '</div>' +
+      '<div class="lautstaerke">' +
+        '<svg class="laut-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/></svg>' +
+        '<input type="range" class="laut-regler" min="0" max="100" step="1" aria-label="Lautstärke">' +
+        '<svg class="laut-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9.5h3.5L11 5.5v13l-4.5-4H3z"/><path d="M14.5 8.5a5 5 0 0 1 0 7M17 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>' +
       '</div>';
 
     var play = wrap.querySelector(".play");
@@ -352,6 +396,9 @@
     var jetzt = wrap.querySelector(".zeit-jetzt");
     var gesamt = wrap.querySelector(".zeit-gesamt");
     var tasten = wrap.querySelectorAll(".sprungtasten button");
+    lautRegler = wrap.querySelector(".laut-regler");
+    lautSetzen(laut);
+    lautRegler.addEventListener("input", function () { lautSetzen(lautRegler.value / 100); });
 
     function anzeigen() {
       var d = audio.duration, t = audio.currentTime || 0;
@@ -405,6 +452,7 @@
     };
 
     play.addEventListener("click", function () {
+      tonWecken();
       if (audio.paused) audio.play().catch(laeuftAnzeigen); else audio.pause();
     });
     wrap.querySelector(".zurueck15").addEventListener("click", function () { springe(audio.currentTime - SPRUNG); });
@@ -437,6 +485,7 @@
       anzeigen();
       laeuftAnzeigen();
       /* Wenn der Browser das verweigert, bleibt die Play-Taste stehen. */
+      tonWecken();
       audio.play().catch(function () { laeuftAnzeigen(); });
     };
     return wrap;
