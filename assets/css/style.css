@@ -105,20 +105,14 @@ main:focus { outline: none; }
 /* ---------- Kopf ---------- */
 
 .kopf {
-  display: flex; flex-wrap: wrap; align-items: baseline;
+  display: flex; flex-wrap: wrap; align-items: center;
   justify-content: space-between; gap: 0.25rem 1.5rem;
-  padding: 0.8rem var(--rand) 0.65rem;
+  padding: 0.6rem var(--rand) 0.55rem;
   border-bottom: 2px solid var(--schrift);
 }
-.kopf-marke { text-decoration: none; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 0.9rem; }
-.kopf-titel {
-  font-family: var(--titel-schrift);
-  text-transform: lowercase;   /* wie in der Grafik: „freihand“ */
-  font-size: var(--titel-groesse);
-  line-height: var(--titel-zeilen);
-  color: var(--schrift);
-}
-.kopf-unter { font-weight: 600; }
+.kopf-marke { display: block; text-decoration: none; line-height: 0; }
+/* Logo links. Höhe ändern = Logo größer oder kleiner (Breite folgt von selbst). */
+.kopf-logo  { display: block; height: 4rem; width: auto; max-width: 70vw; }
 .kopf-ort   { font-size: 1rem; }
 
 
