@@ -13,7 +13,7 @@
 var VERSION = "freihand-2";
 var KERN = [
   "./", "index.html", "assets/css/style.css", "assets/js/app.js", "assets/js/kapitel.js",
-  "manifest.webmanifest",
+  "manifest.webmanifest", "assets/img/freihand-logo.png",
   "assets/fonts/fraunces-latin-400-normal.woff2",
   "assets/fonts/hanken-grotesk-latin-400-normal.woff2",
   "assets/fonts/hanken-grotesk-latin-400-italic.woff2",
